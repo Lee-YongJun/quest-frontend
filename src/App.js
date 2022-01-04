@@ -2,10 +2,12 @@
 import React, {useState, useEffect, useCallback} from "react";
 //리덕스 
 import {useDispatch, useSelector} from "react-redux";
-//리액트돔
-import {Router, Switch, Route, Link} from "react-router-dom";
 //부트스트랩
 import "bootstrap/dist/css/bootstrap.min.css";
+//리액트돔
+//Router가 아닌 BrowserRouter사용이유는 Router는 버튼클릭시 router에 해당하는component를 가져오지 못해 사용.
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
 //페이지
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -24,7 +26,7 @@ const App = () => {
     const [showAdminPage, setShowAdminPage] = useState(false);
 
     const {user: currentUser} = useSelector((state) => state.auth);
-    
+
     //dispatch 사용하기 위한 준비
     const dispatch = useDispatch();
 
@@ -90,7 +92,7 @@ const App = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <a href="/login" className="nav-link" onClick={logOut}>
+                                <a href={"/login"} className="nav-link" onClick={logOut}>
                                     로그아웃
                                 </a>
                             </li>

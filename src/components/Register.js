@@ -90,7 +90,6 @@ const Register = () => {
                     })
                 })
                 .catch(() => {
-                    console.log(message);
                     setSuccessful(false);
                     Swal.fire({
                         position: 'center',

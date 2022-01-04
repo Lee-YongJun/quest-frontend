@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//리덕스 Provider사용.
+//리덕스 Provider사용.(react앱에 store를 손쉽게 연동할수있도록 도와주는 컴포넌트)
 import {Provider} from "react-redux";
 import store from "./store";
 import App from "./App";
-//4. App.js에 store를 넣어준다.
+//5. App.js에 store를 넣어준다.
 ReactDOM.render(
     <Provider store={store}>
         <App/>

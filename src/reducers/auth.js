@@ -5,41 +5,40 @@ import {
     LOGIN_FAIL,
     LOGOUT,
 } from "../actions/types";
+
 //2. 세부 reducer정의
 const user = JSON.parse(localStorage.getItem("user"));
 
+//초기상태
 const initialState = user
     ? {isLoggedIn: true, user}
     : {isLoggedIn: false, user: null};
 
 export default function (state = initialState, action) {
+    //type:login상태,payload:객체 데이터
     const {type, payload} = action;
+
     switch (type) {
         case REGISTER_SUCCESS:
             return {
-                ...state,
                 isLoggedIn: false,
             };
         case REGISTER_FAIL:
             return {
-                ...state,
                 isLoggedIn: false,
             };
         case LOGIN_SUCCESS:
             return {
-                ...state,
                 isLoggedIn: true,
                 user: payload.user,
             };
         case LOGIN_FAIL:
             return {
-                ...state,
                 isLoggedIn: false,
                 user: null,
             };
         case LOGOUT:
             return {
-                ...state,
                 isLoggedIn: false,
                 user: null,
             };

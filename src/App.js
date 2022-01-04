@@ -7,6 +7,7 @@ import {Router, Switch, Route, Link} from "react-router-dom";
 //부트스트랩
 import "bootstrap/dist/css/bootstrap.min.css";
 
+//페이지
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";

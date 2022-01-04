@@ -1,7 +1,9 @@
 import {SET_MESSAGE, CLEAR_MESSAGE} from "../actions/types";
 
 const initialState = {};
+
 //3. 세부 reducer정의
+
 export default function (state = initialState, action) {
     const {type, payload} = action;
 

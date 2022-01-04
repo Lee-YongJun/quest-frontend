@@ -21,7 +21,6 @@ import {clearMessage} from "./actions/message";
 import {history} from "./helpers/history";
 
 const App = () => {
-    console.log(history)
     //useState : 상태값
     const [showAdminBoard, setShowAdminBoard] = useState(false);
 

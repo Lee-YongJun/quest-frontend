@@ -6,7 +6,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {Router, Switch, Route, Link} from "react-router-dom";
 //부트스트랩
 import "bootstrap/dist/css/bootstrap.min.css";
-
 //페이지
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -17,12 +16,12 @@ import Admin from "./components/Admin";
 
 import {logout} from "./actions/auth";
 import {clearMessage} from "./actions/message";
-
+//react-router이용하여 페이지이동처리.
 import {history} from "./helpers/history";
 
 const App = () => {
     //useState : 상태값
-    const [showAdminBoard, setShowAdminBoard] = useState(false);
+    const [showAdminPage, setShowAdminPage] = useState(false);
 
     const {user: currentUser} = useSelector((state) => state.auth);
     
@@ -45,9 +44,9 @@ const App = () => {
     //권한별로 admin페이지 보여줌.
     useEffect(() => {
         if (currentUser) {
-            setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
+            setShowAdminPage(currentUser.roles.includes("ROLE_ADMIN"));
         } else {
-            setShowAdminBoard(false);
+            setShowAdminPage(false);
         }
     }, [currentUser, logOut]);
 
@@ -66,10 +65,10 @@ const App = () => {
                             </Link>
                         </li>
 
-                        {showAdminBoard && (
+                        {showAdminPage && (
                             <li className="nav-item">
                                 <Link to={"/admin"} className="nav-link">
-                                    Admin Board
+                                    Admin
                                 </Link>
                             </li>
                         )}

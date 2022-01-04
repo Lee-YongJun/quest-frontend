@@ -8,7 +8,6 @@ import {Redirect} from 'react-router-dom';
 //정보 페이지
 const Profile = () => {
     const {user: currentUser} = useSelector((state) => state.auth);
-
     //현재 유저정보없을때는 로그인페이지 이동
     if (!currentUser) {
         return <Redirect to="/login"/>;

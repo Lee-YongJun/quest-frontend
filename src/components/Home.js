@@ -4,7 +4,7 @@ import styled from "styled-components";
 import React, {useState, useEffect} from "react";
 //권한별 페이지 서비스
 import UserService from "../services/userService";
-
+//메인페이지
 const Home = () => {
     //상태값 초기화
     const [content, setContent] = useState("");
@@ -24,7 +24,6 @@ const Home = () => {
             }
         );
     }, []);
-
     return (
         <HomeContainer>
             <Jumbotron>

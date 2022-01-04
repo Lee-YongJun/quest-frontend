@@ -1,5 +1,4 @@
 import {SET_MESSAGE, CLEAR_MESSAGE} from "./types";
-
 //서버의 응답 메세지 확인
 export const setMessage = (message) => ({
     type: SET_MESSAGE,

@@ -12,17 +12,17 @@ const getPublicContent = () => {
 };
 
 //유저페이지(유저,관리자가능)
-const getUserBoard = () => {
+const getUserPage = () => {
     return axios.get(API_URL + "user", {headers: authHeader()});
 };
 
 //관리자페이지
-const getAdminBoard = () => {
+const getAdminPage = () => {
     return axios.get(API_URL + "admin", {headers: authHeader()});
 };
 
 export default {
     getPublicContent,
-    getUserBoard,
-    getAdminBoard,
+    getUserPage,
+    getAdminPage,
 };

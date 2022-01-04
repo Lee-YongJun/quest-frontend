@@ -4,13 +4,13 @@ import styled from "styled-components";
 import React, {useState, useEffect} from "react";
 //권한별 페이지 서비스
 import UserService from "../services/userService";
-
+//관리자페이지
 const Admin = () => {
     //상태값 초기화
     const [content, setContent] = useState("");
 
     useEffect(() => {
-        UserService.getAdminBoard().then(
+        UserService.getAdminPage().then(
             (response) => {
                 setContent(response.data);
             },
@@ -26,7 +26,6 @@ const Admin = () => {
             }
         );
     }, []);
-
     return (
         <AdminContainer>
             <Jumbotron>
@@ -38,9 +37,7 @@ const Admin = () => {
         </AdminContainer>
     );
 };
-
 //화면 styled component로 구성.
-
 const AdminContainer = styled.div`
     height:1000px;
 `;

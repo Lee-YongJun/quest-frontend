@@ -17,7 +17,6 @@ import {useDispatch, useSelector} from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
 //필수입력 유효성 체크
 const required = (value) => {
     if (!value) {

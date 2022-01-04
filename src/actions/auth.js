@@ -6,9 +6,8 @@ import {
     LOGOUT,
     SET_MESSAGE,
 } from "./types";
-
+//인증서비스
 import AuthService from "../services/authService";
-
 // 등록
 export const register = (username, password) => (dispatch) => {
     return AuthService.register(username, password).then(

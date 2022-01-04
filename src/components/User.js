@@ -8,9 +8,8 @@ import React, {useState, useEffect} from "react";
 const User = () => {
     //상태값초기화
     const [content, setContent] = useState("");
-
     useEffect(() => {
-        UserService.getUserBoard().then(
+        UserService.getUserPage().then(
             (response) => {
                 setContent(response.data);
             },
@@ -26,7 +25,6 @@ const User = () => {
             }
         );
     }, []);
-
     return (
         <UserContainer>
             <Jumbotron>

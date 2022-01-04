@@ -16,7 +16,6 @@ import {useDispatch, useSelector} from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
 //필수입력 유효성 처리
 const required = (value) => {
     if (!value) {
@@ -148,9 +147,7 @@ const Login = (props) => {
         </LoginDiv>
     );
 };
-
 //화면 styled component로 구성.
-
 const LoginP = styled.div`
   font-weight: 700;
   font-size: 2em;

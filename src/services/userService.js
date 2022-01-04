@@ -1,4 +1,6 @@
+//axios
 import axios from "axios";
+//accessToken
 import authHeader from "./authHeader";
 
 //권한별 페이지 

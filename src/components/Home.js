@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from "react";
+//화면 css적용하는데 react styled-components사용.
 import styled from "styled-components";
+//react Hooks기능 사용.
+import React, {useState, useEffect} from "react";
+//권한별 페이지 서비스
 import UserService from "../services/userService";
 
-
 const Home = () => {
+    //상태값 초기화
     const [content, setContent] = useState("");
 
     useEffect(() => {
@@ -23,7 +26,6 @@ const Home = () => {
     }, []);
 
     return (
-
         <HomeContainer>
             <Jumbotron>
                 <h3>{content} header</h3>
@@ -35,6 +37,7 @@ const Home = () => {
 
     );
 };
+//화면 styled component로 구성.
 const HomeContainer = styled.div`
     height:1000px;
 `;

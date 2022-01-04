@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from "react";
-
-import UserService from "../services/userService";
+//styled컴포넌트
 import styled from "styled-components";
-
+//권한별 페이지 서비스
+import UserService from "../services/userService";
+//react Hooks기능 사용.
+import React, {useState, useEffect} from "react";
+//유저페이지
 const User = () => {
+    //상태값초기화
     const [content, setContent] = useState("");
 
     useEffect(() => {
@@ -35,6 +38,7 @@ const User = () => {
         </UserContainer>
     );
 };
+//화면 styled component로 구성.
 const UserContainer = styled.div`
     height:1000px;
 `;

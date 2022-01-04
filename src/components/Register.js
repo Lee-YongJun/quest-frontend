@@ -1,18 +1,24 @@
+//css
+import "../css/input.css";
+//alert창
+import Swal from 'sweetalert2';
+//styled컴포넌트
+import styled from "styled-components";
+//등록 액션
+import {register} from "../actions/auth";
+//react-router-dom에서 redirect이동
+import {Redirect} from "react-router-dom";
+//리액트 hooksrlsmd
 import React, {useState, useRef} from "react";
+//리덕스 useSelector: 리덕스의 state를 조회할 수 있다.
+//리덕스 useDispatch: 생성한 action을 useDispatch를 통해 발생시킬 수 있다 .
 import {useDispatch, useSelector} from "react-redux";
-
-// import { useHistory } from 'react-router-dom';
+//validation 체크
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import "../css/input.css";
-import {register} from "../actions/auth";
-import styled from "styled-components";
-import {Redirect} from "react-router-dom";
-import Swal from 'sweetalert2'
-
-
+//필수입력 유효성 체크
 const required = (value) => {
     if (!value) {
         return (
@@ -22,7 +28,7 @@ const required = (value) => {
         );
     }
 };
-
+//아이디 유효성체크
 const vusername = (value) => {
     if (value.length < 3 || value.length > 20) {
         return (
@@ -32,7 +38,7 @@ const vusername = (value) => {
         );
     }
 };
-
+//비밀번호 유효성체크
 const vpassword = (value) => {
     if (value.length < 6 || value.length > 40) {
         return (
@@ -42,7 +48,7 @@ const vpassword = (value) => {
         );
     }
 };
-
+//등록
 const Register = () => {
     const form = useRef();
     const checkBtn = useRef();
@@ -145,6 +151,7 @@ const Register = () => {
         </RegisterDiv>
     );
 };
+//화면 styled component로 구성.
 const RegisterP = styled.div`
   font-weight: 700;
   font-size: 2em;

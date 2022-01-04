@@ -1,21 +1,21 @@
+//css연결
+import "../css/input.css";
+//alert창 변경
+import Swal from 'sweetalert2'
+import {login} from "../actions/auth";
+//스타일 컴포넌트
+import styled from "styled-components";
+//router redirect링크 처리
+import {Redirect} from 'react-router-dom';
 //reactHooks
 import React, {useState, useRef} from "react";
 //리덕스 useSelector: 리덕스의 state를 조회할 수 있다.
 //리덕스 useDispatch: 생성한 action을 useDispatch를 통해 발생시킬 수 있다 .
 import {useDispatch, useSelector} from "react-redux";
-//router redirect링크 처리
-import {Redirect} from 'react-router-dom';
 //validation처리
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-//css연결
-import "../css/input.css";
-import {login} from "../actions/auth";
-//스타일 컴포넌트
-import styled from "styled-components";
-//alert창 변경
-import Swal from 'sweetalert2'
 
 //필수입력 유효성 처리
 const required = (value) => {
@@ -41,10 +41,10 @@ const Login = (props) => {
     //리덕스 상태값 조회
     const {isLoggedIn} = useSelector(state => state.auth);
     const {message} = useSelector(state => state.message);
-    
+
     //생성한 액션을 통해 dispatch호출
     const dispatch = useDispatch();
-    
+
     //id 변경 이벤트
     const onChangeUsername = (e) => {
         const username = e.target.value;
@@ -66,7 +66,7 @@ const Login = (props) => {
 
         //로딩이벤트 추가
         setLoading(true);
-        
+
         //로그인할때 현재 유효성 체크
         form.current.validateAll();
 
@@ -83,9 +83,9 @@ const Login = (props) => {
                         confirmButtonColor: '#a5dc86',
                         footer: 'I-ON홈페이지에 온것을 환영합니다.'
                     }).then(() => {
-                         props.history.push("/profile");
-                         //현재페이지새로고침
-                         window.location.reload();
+                        props.history.push("/profile");
+                        //현재페이지새로고침
+                        window.location.reload();
                     })
                 })
                 .catch(() => {

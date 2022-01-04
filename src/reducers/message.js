@@ -1,5 +1,6 @@
 import {SET_MESSAGE, CLEAR_MESSAGE} from "../actions/types";
 
+//초기상태지정
 const initialState = {};
 
 //3. 세부 reducer정의

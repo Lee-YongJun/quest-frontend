@@ -19,40 +19,36 @@ import {logout} from "./actions/auth";
 import {clearMessage} from "./actions/message";
 
 import {history} from "./helpers/history";
-// 컴포넌트에서 redux사용하기
-import EventBus from "./common/EventBus";
 
 const App = () => {
+    //useState : 상태값
     const [showAdminBoard, setShowAdminBoard] = useState(false);
 
     const {user: currentUser} = useSelector((state) => state.auth);
+    
     //dispatch 사용하기 위한 준비
     const dispatch = useDispatch();
 
+    //useEffect:어떠한 값의 변화를 감지시 작업 실행.
     useEffect(() => {
         history.listen((location) => {
             dispatch(clearMessage()); // 위치 변경되면 메세지 클리어
         });
     }, [dispatch]);
 
+    //useCallback 특정함수를 만들지 않고 재사용
     const logOut = useCallback(() => {
-        dispatch(logout());
+        //actions/auth에 logout으로 이동.
+        dispatch(logout()); //로그아웃.
     }, [dispatch]);
 
+    //권한별로 admin페이지 보여줌.
     useEffect(() => {
         if (currentUser) {
             setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
         } else {
             setShowAdminBoard(false);
         }
-
-        EventBus.on("logout", () => {
-            logOut();
-        });
-
-        return () => {
-            EventBus.remove("logout");
-        };
     }, [currentUser, logOut]);
 
     return (

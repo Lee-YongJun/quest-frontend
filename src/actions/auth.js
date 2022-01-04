@@ -79,6 +79,7 @@ export const login = (username, password) => (dispatch) => {
 };
 //로그아웃
 export const logout = () => (dispatch) => {
+    //로그아웃 처리
     AuthService.logout();
 
     dispatch({

@@ -1,7 +1,7 @@
 //reactHooks
 import React, {useState, useRef} from "react";
-//리덕스 useSelector: connect함수를 이용하지 않고 리덕스의 state를 조회할 수 있다.
-//리덕스 useDispatch:생성한 action을 useDispatch를 통해 발생시킬 수 있다 .
+//리덕스 useSelector: 리덕스의 state를 조회할 수 있다.
+//리덕스 useDispatch: 생성한 action을 useDispatch를 통해 발생시킬 수 있다 .
 import {useDispatch, useSelector} from "react-redux";
 //router redirect링크 처리
 import {Redirect} from 'react-router-dom';
@@ -27,7 +27,7 @@ const required = (value) => {
         );
     }
 };
-//로그인
+//7.로그인
 const Login = (props) => {
     //특정DOM을 가리킬때 사용하는 Hook함수
     const form = useRef();
@@ -41,27 +41,37 @@ const Login = (props) => {
     //리덕스 상태값 조회
     const {isLoggedIn} = useSelector(state => state.auth);
     const {message} = useSelector(state => state.message);
-
+    
+    //생성한 액션을 통해 dispatch호출
     const dispatch = useDispatch();
-
+    
+    //id 변경 이벤트
     const onChangeUsername = (e) => {
         const username = e.target.value;
         setUsername(username);
     };
 
+    //비밀번호 변경 이벤트
     const onChangePassword = (e) => {
         const password = e.target.value;
         setPassword(password);
     };
 
+    //로그인처리
     const handleLogin = (e) => {
+
+        //a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나,창이 새로고침하여 실행된다.
+        //preventDefault 를 통해 이러한 동작을 막아줄 수 있다.
         e.preventDefault();
 
+        //로딩이벤트 추가
         setLoading(true);
-
-        form.current.validateAll();
         
+        //로그인할때 현재 유효성 체크
+        form.current.validateAll();
+
         if (checkBtn.current.context._errors.length === 0) {
+            //dispatch:reducer함수 동작
             dispatch(login(username, password))
                 .then(() => {
                     Swal.fire({
@@ -86,6 +96,7 @@ const Login = (props) => {
         }
     };
 
+    //로그인이 되었을경우 redirect로 정보페이지로 이동.
     if (isLoggedIn) {
         return <Redirect to="/profile"/>;
     }
@@ -137,6 +148,9 @@ const Login = (props) => {
         </LoginDiv>
     );
 };
+
+//화면 styled component로 구성.
+
 const LoginP = styled.div`
   font-weight: 700;
   font-size: 2em;

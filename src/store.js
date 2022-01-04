@@ -4,7 +4,6 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 
 const middleware = [thunk];
-console.log(middleware);
 
 //6.store생성
 const store = createStore(

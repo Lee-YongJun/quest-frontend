@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import store from "./store";
 import App from "./App";
+
 //5. App.js에 store를 넣어준다.
 ReactDOM.render(
     <Provider store={store}>

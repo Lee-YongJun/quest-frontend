@@ -21,6 +21,7 @@ import {clearMessage} from "./actions/message";
 import {history} from "./helpers/history";
 
 const App = () => {
+    console.log(history)
     //useState : 상태값
     const [showAdminBoard, setShowAdminBoard] = useState(false);
 
@@ -52,6 +53,7 @@ const App = () => {
     }, [currentUser, logOut]);
 
     return (
+        //history추가.
         <Router history={history}>
             <div>
                 <nav className="navbar navbar-expand navbar-dark bg-dark ">

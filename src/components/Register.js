@@ -67,7 +67,6 @@ const Register = () => {
         const password = e.target.value;
         setPassword(password);
     };
-    // const history = useHistory();
     const handleRegister = (e) => {
         e.preventDefault();
 
@@ -87,6 +86,9 @@ const Register = () => {
                         showConfirmButton: true,
                         confirmButtonColor: '#a5dc86',
                         footer: 'I-ON홈페이지에 온것을 환영합니다.'
+                    }).then(() => {
+                        //현재페이지새로고침
+                        window.location.reload();
                     })
                 })
                 .catch(() => {

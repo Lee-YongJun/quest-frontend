@@ -17,7 +17,6 @@ const initialState = user
 export default function (state = initialState, action) {
     //type:login상태,payload:객체 데이터
     const {type, payload} = action;
-
     switch (type) {
         case REGISTER_SUCCESS:
             return {

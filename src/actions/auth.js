@@ -20,7 +20,7 @@ export const register = (username, password) => (dispatch) => {
                 type: SET_MESSAGE,
                 payload: response.data.message,
             });
-            //값반환
+            //비동기 처리에서 사용되는 객체로 다른코드가 비동기적으로 실행될수 있도록 하는 객체로 resolve사용시 반환.
             return Promise.resolve();
         },
         (error) => {

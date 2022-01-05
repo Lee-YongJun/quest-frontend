@@ -58,7 +58,6 @@ const Login = (props) => {
 
     //로그인처리
     const handleLogin = (e) => {
-
         //a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나,창이 새로고침하여 실행된다.
         //preventDefault 를 통해 이러한 동작을 막아줄 수 있다.
         e.preventDefault();

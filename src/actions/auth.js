@@ -16,8 +16,6 @@ import {
 import NoticeService from "../services/noticeService";
 import AuthService from "../services/authService";
 import Swal from "sweetalert2";
-import UserService from "../services/userService";
-import authService from "../services/authService";
 
 // 등록
 export const register = (username, password, name, email, phone, postCode, address, detailAddress) => (dispatch) => {

@@ -8,20 +8,16 @@ import {useDispatch, useSelector} from "react-redux";
 import {regNotice} from "../actions/auth";
 //react-router-dom에서 redirect이동
 import {Redirect} from "react-router-dom";
-
-//프로알라 js
+//Froala
+import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
-
-// 프로알라 css
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
-
 //validation 체크
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
-import FroalaEditor from 'react-froala-wysiwyg';
+//alert
 import Swal from "sweetalert2";
 
 //필수입력 유효성 체크
@@ -41,13 +37,13 @@ const vtitle = (value) => {
             <ErrorMessage role="alert">
                 제목은 반드시 3~20자 사이로 입력해주세요.
             </ErrorMessage>
-
         );
     }
 };
 
 //메인페이지
 const Froala = () => {
+
     const form = useRef();
     const checkBtn = useRef();
 
@@ -63,12 +59,8 @@ const Froala = () => {
         setTitle(title);
     };
     const onChangeContent = (e) => {
-        //태그제거정규식
-        // const extractTextPattern = /(<([^>]+)>)/gi;
         //값가져오기
         const contentVal = e.valueOf();
-        //태그제거
-        // const content = contentVal.replace(extractTextPattern,"");
         setContent(contentVal);
     };
     const {user: currentUser} = useSelector((state) => state.auth);

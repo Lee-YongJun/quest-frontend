@@ -13,11 +13,13 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import User from "./components/User";
-import Admin from "./components/Admin";
+import Notice from "./components/Notice";
+import UserManage from "./components/UserManage";
+import Froala from "./components/Froala";
 
 import {logout} from "./actions/auth";
 import {clearMessage} from "./actions/message";
+
 //react-router이용하여 페이지이동처리.
 import {history} from "./helpers/history";
 
@@ -69,19 +71,16 @@ const App = () => {
 
                         {showAdminPage && (
                             <li className="nav-item">
-                                <Link to={"/admin"} className="nav-link">
-                                    Admin
+                                <Link to={"/userManage"} className="nav-link">
+                                    회원관리
                                 </Link>
                             </li>
                         )}
-
-                        {currentUser && (
-                            <li className="nav-item">
-                                <Link to={"/user"} className="nav-link">
-                                    User
-                                </Link>
-                            </li>
-                        )}
+                        <li className="nav-item">
+                            <Link to={"/notice"} className="nav-link">
+                                게시판
+                            </Link>
+                        </li>
                     </div>
 
                     {currentUser ? (
@@ -113,7 +112,6 @@ const App = () => {
                         </div>
                     )}
                 </nav>
-
                 <div className="container mt-3">
                     <Switch>
                         {/* exact는 이하 경로를 중복 출력하지 않도록한다. */}
@@ -121,13 +119,13 @@ const App = () => {
                         <Route exact path="/login" component={Login}/>
                         <Route exact path="/register" component={Register}/>
                         <Route exact path="/profile" component={Profile}/>
-                        <Route path="/user" component={User}/>
-                        <Route path="/admin" component={Admin}/>
+                        <Route path="/notice" component={Notice}/>
+                        <Route path="/userManage" component={UserManage}/>
+                        <Route path="/froala" component={Froala}/>
                     </Switch>
                 </div>
             </div>
         </Router>
     );
 };
-
 export default App;

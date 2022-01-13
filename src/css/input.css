@@ -10,10 +10,16 @@ input {
 }
 html {
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
+}
+.lightskyblue-color{
+    background: rgb(223, 241, 252);
 }
 
-body {
-    height: 100%;
-    overflow: auto;
+.lightcyan-color{
+    background: lightcyan;
+}
+
+.lightpink-color{
+    background: rgb(255, 236, 239);
 }

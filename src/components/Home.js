@@ -8,8 +8,8 @@ import UserService from "../services/userService";
 const Home = () => {
     //상태값 초기화
     const [content, setContent] = useState("");
-
     useEffect(() => {
+
         UserService.getPublicContent().then(
             (response) => {
                 setContent(response.data);
@@ -24,13 +24,14 @@ const Home = () => {
             }
         );
     }, []);
+
     return (
         <HomeContainer>
             <Jumbotron>
                 <h3>{content} header</h3>
             </Jumbotron>
             <HomeDiv>
-                <h3>{content} 내용</h3>
+                <h3>{content}내용</h3>
             </HomeDiv>
         </HomeContainer>
 

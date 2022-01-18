@@ -9,7 +9,7 @@ import {
     DELETE_SUCCESS,
     DELETE_FAIL,
     REGNOTICE_SUCCESS,
-    REGNOTICE_FAIL
+    REGNOTICE_FAIL, REFRESH_TOKEN
 } from "../actions/types";
 
 //2. 세부 reducer정의
@@ -81,6 +81,11 @@ export default function (state = initialState, action) {
                 ...state,
                 isLoggedIn: false,
                 user: null,
+            };
+        case REFRESH_TOKEN:
+            return {
+                ...state,
+                user: {...user, accessToken: payload},
             };
         //default 쓰지 않을 시 맨 처음 state의 값이 undefined나옴. default넣어야됨.
         default:

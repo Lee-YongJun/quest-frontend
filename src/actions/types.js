@@ -12,3 +12,6 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+//새로고침 토큰이 있는 redux
+export const REFRESH_TOKEN = "REFRESH_TOKEN";
+

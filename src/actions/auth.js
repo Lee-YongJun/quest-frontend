@@ -11,6 +11,7 @@ import {
     MODIFY_FAIL,
     DELETE_SUCCESS,
     DELETE_FAIL,
+    REFRESH_TOKEN
 } from "./types";
 
 //인증서비스
@@ -210,6 +211,7 @@ export const login = (username, password) => (dispatch) => {
         }
     );
 };
+
 //로그아웃
 export const logout = () => (dispatch) => {
     //로그아웃 처리
@@ -219,3 +221,11 @@ export const logout = () => (dispatch) => {
         type: LOGOUT,
     });
 };
+
+//새로고침이 있는 refresh Token Redux
+export const refreshToken = (accessToken) => (dispatch) => {
+    dispatch({
+        type: REFRESH_TOKEN,
+        payload: accessToken,
+    })
+}

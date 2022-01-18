@@ -82,8 +82,9 @@ const Login = (props) => {
                         footer: 'I-ON홈페이지에 온것을 환영합니다.'
                     }).then(() => {
                         // 이방법도 되네?CSR client side routing 하지않고 url변경해 데이터 가져옴.
-                        // window.location.replace("/profile");
-                        props.history.push("/profile");
+                         window.location.replace("/profile");
+                        // props.history.push("/profile");
+
                         //현재페이지새로고침
                         window.location.reload();
                     })

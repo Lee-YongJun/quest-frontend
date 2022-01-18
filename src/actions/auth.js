@@ -24,6 +24,7 @@ export const register = (username, password, name, email, phone, postCode, addre
 
     return AuthService.register(username, password, name, email, phone, postCode, address, detailAddress).then(
         (response) => {
+            console.log();
             Swal.fire({
                 position: 'center',
                 icon: 'success',

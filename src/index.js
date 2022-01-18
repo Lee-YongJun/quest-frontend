@@ -4,9 +4,8 @@ import React from "react";
 import store from "./store";
 import ReactDOM from "react-dom";
 //리덕스 Provider사용.(react앱에 store를 손쉽게 연동할수있도록 도와주는 컴포넌트)
-import {Provider, useDispatch} from "react-redux";
+import {Provider} from "react-redux";
 import setupInterceptors from "./services/setupInterceptors";
-import {logout} from "./actions/auth";
 
 //리얼그리드 css
 //import '../node_modules/realgrid/dist/realgrid-style.css'

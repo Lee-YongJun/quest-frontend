@@ -1,9 +1,6 @@
 //화면 styled component로 구성.
 import styled from "styled-components";
 
-export const ProfileContainer = styled.div`
-    height:1000px;
-`;
 export const Jumbotron = styled.header`
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -22,4 +19,7 @@ export const ProfileDiv = styled.div`
   margin-bottom:30px;
   height:100%;
   font-size:2rem;
+`;
+export const ProfileContainer = styled.div`
+    height:1000px;
 `;

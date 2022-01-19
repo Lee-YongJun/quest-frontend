@@ -10,7 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //Router가 아닌 BrowserRouter사용이유는 Router는 버튼클릭시 router에 해당하는component를 가져오지 못해 사용.
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-
 const App = () => {
     return (
         <Router>

@@ -1,14 +1,5 @@
 import styled from "styled-components";
 
-export const ErrorMessage = styled.span`
-     font-size: 12px;
-     line-height: 42px;
-     font-weight: bold;
-     color: rgb(255,77,46);
-     vertical-align: middle;
-     float: right;
-     margin-right:10px;
- `;
 //공지사항 글씨
 export const FroalaH3 = styled.div`
      width: 100%;
@@ -20,20 +11,6 @@ export const FroalaH3 = styled.div`
      font-weight: 400;
      margin-top: 20px;
 `
-//공지사항 내용 설명
-export const FroalaDescription = styled.div`
-     max-width: 1160px;
-     margin: 20px auto 0 auto;
-     width: 100%;
-     height: auto;
-     font-size: 16px;
-     color: #292929;
-`
-//화면 styled component로 구성.
-export const FroalaContainer = styled.div`
-     height:1000px;
-`;
-
 export const FroalaDiv = styled.div`
      margin-top:10px;
      padding: 2rem 1rem;
@@ -64,4 +41,27 @@ export const FroalaButton = styled.button`
      color: white;
      font-size: 1.2em;
      letter-spacing: 2px;
+`;
+//에러메세지
+export const ErrorMessage = styled.span`
+     font-size: 12px;
+     line-height: 42px;
+     font-weight: bold;
+     color: rgb(255,77,46);
+     vertical-align: middle;
+     float: right;
+     margin-right:10px;
+ `;
+//화면 styled component로 구성.
+export const FroalaContainer = styled.div`
+     height:1000px;
+`;
+//공지사항 내용 설명
+export const FroalaDescription = styled.div`
+     max-width: 1160px;
+     margin: 20px auto 0 auto;
+     width: 100%;
+     height: auto;
+     font-size: 16px;
+     color: #292929;
 `;

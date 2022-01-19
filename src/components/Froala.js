@@ -1,13 +1,28 @@
 //styled컴포넌트
-import styled from "styled-components";
-//react Hooks기능 사용.
-import React, {useState, useRef} from "react";
-import "../../node_modules/realgrid/dist/realgrid-sky-blue.css";
-import {useDispatch, useSelector} from "react-redux";
-//등록 액션
-import {regNotice} from "../actions/auth";
+import {
+    ErrorMessage,
+    FroalaH3,
+    FroalaDescription,
+    FroalaContainer,
+    FroalaDiv,
+    FroalaDiv1,
+    FroalaDiv2,
+    FroalaDiv3,
+    FroalaSpan,
+    FroalaButton
+} from "../styles/styledFroala";
+//alert
+import Swal from "sweetalert2";
 //react-router-dom에서 redirect이동
 import {Redirect} from "react-router-dom";
+//등록 액션
+import {regNotice} from "../actions/auth";
+//react Hooks기능 사용.
+import React, {useState, useRef} from "react";
+//리덕스
+import {useDispatch, useSelector} from "react-redux";
+//리얼그리드 css
+import "../../node_modules/realgrid/dist/realgrid-sky-blue.css";
 //Froala
 import FroalaEditor from 'react-froala-wysiwyg';
 import 'froala-editor/js/froala_editor.pkgd.min.js';
@@ -17,8 +32,6 @@ import 'froala-editor/css/froala_editor.pkgd.min.css';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-//alert
-import Swal from "sweetalert2";
 
 //필수입력 유효성 체크
 const required = (value) => {
@@ -30,6 +43,7 @@ const required = (value) => {
         );
     }
 };
+
 //제목 유효성체크
 const vtitle = (value) => {
     if (value.length < 3 || value.length > 20) {
@@ -58,11 +72,13 @@ const Froala = () => {
         const title = e.target.value;
         setTitle(title);
     };
+
     const onChangeContent = (e) => {
         //값가져오기
         const contentVal = e.valueOf();
         setContent(contentVal);
     };
+
     const {user: currentUser} = useSelector((state) => state.auth);
 
     const regNoticeButton = (e) => {
@@ -70,6 +86,7 @@ const Froala = () => {
         e.preventDefault();
 
         setSuccessful(false);
+
         form.current.validateAll();
 
         if (checkBtn.current.context._errors.length === 0) {
@@ -162,69 +179,4 @@ const Froala = () => {
         </FroalaContainer>
     );
 };
-const ErrorMessage = styled.span`
-  font-size: 12px;
-  line-height: 42px;
-  font-weight: bold;
-  color: rgb(255,77,46);
-  vertical-align: middle;
-  float: right;
-  margin-right:10px;
- `;
-//공지사항 글씨
-const FroalaH3 = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 0 0 0 0;
-    text-align: center;
-    font-size: 37px;
-    color: #292929;
-    font-weight: 400;
-    margin-top: 20px;
-`
-//공지사항 내용 설명
-const FroalaDescription = styled.div`
-    max-width: 1160px;
-    margin: 20px auto 0 auto;
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    color: #292929;
-`
-//화면 styled component로 구성.
-const FroalaContainer = styled.div`
-    height:1000px;
-`;
-
-const FroalaDiv = styled.div`
-  margin-top:10px;
-  padding: 2rem 1rem;
-  border-radius: 0.3rem;
-  text-align:center;
-  margin-bottom:auto;
-`;
-const FroalaDiv1 = styled.div`
-  margin-top:30px;
-  float:right;
-`;
-const FroalaDiv2 = styled.div`
-  margin-top:10px;
-`;
-const FroalaDiv3 = styled.div`
-  border:none;
-`;
-const FroalaSpan = styled.span`
-  width:300px;
-`;
-const FroalaButton = styled.button`
-  height: 50px;
-  width:100px;
-  border: 0;
-  outline: none;
-  border-radius: 10px;
-  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
-  color: white;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-`;
 export default Froala;

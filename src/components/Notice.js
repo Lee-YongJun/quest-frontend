@@ -1,9 +1,19 @@
 //styled컴포넌트
-import styled from "styled-components";
-//권한별 페이지 서비스
-import UserService from "../services/noticeService";
+import {
+    Toolbar,
+    NoticeSpan,
+    NoticeButton,
+    NoticePrevButton,
+    NoticeNextButton,
+    NoticeH3,
+    NoticeDescription,
+    NoticeContainer,
+    NoticeDiv
+} from "../styles/styledNotice";
 //react Hooks기능 사용.
 import React, {useEffect} from "react";
+//권한별 페이지 서비스
+import UserService from "../services/noticeService";
 //리얼그리드
 import RealGrid from 'realgrid';
 import "../../node_modules/realgrid/dist/realgrid-sky-blue.css";
@@ -12,6 +22,7 @@ import {useSelector} from "react-redux";
 import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
+
 //전역선언
 let gridView, container, provider;
 let page = -1;
@@ -162,80 +173,4 @@ const Notice = () => {
         </NoticeContainer>
     );
 };
-const Toolbar = styled.div`
-    margin-top:20px;
-`
-const NoticeSpan = styled.span`
-    font-size:20px;
-`
-const NoticeButton = styled.button`
-  width: 100px;
-  height: 50px;
-  border: 0;
-  outline: none;
-  background: #baced8;
-  color: #4f5a6f;
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Light, sans-serif;
-  font-size: 18px;
-  float:right;
-  margin: 0rem 1rem;
-`;
-const NoticePrevButton = styled.button`
-  border-radius:20px;
-  width: 200px;
-  height: 50px;
-  border: 0;
-  outline: none;
-  background: #baced8;
-  color: #4f5a6f;
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Light, sans-serif;
-  font-size: 18px;
-  margin: 0rem 1rem;
-`;
-const NoticeNextButton = styled.button`
-  border-radius:20px;
-  width: 200px;
-  height: 50px;
-  border: 0;
-  outline: none;
-  background: #baced8;
-  color: #4f5a6f;
-  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Light, sans-serif;
-  font-size: 18px;
-  margin: 0rem 1rem;
-`;
-//공지사항 글씨
-const NoticeH3 = styled.div`
-    width: 100%;
-    height: auto;
-    padding: 0 0 0 0;
-    text-align: center;
-    font-size: 37px;
-    color: #292929;
-    font-weight: 400;
-    margin-top: 20px;
-`
-//공지사항 내용 설명
-const NoticeDescription = styled.div`
-    max-width: 1160px;
-    margin: 20px auto 0 auto;
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-    color: #292929;
-    margin-bottom:40px;
-`
-//화면 styled component로 구성.
-const NoticeContainer = styled.div`
-    height:1000px;
-`;
-
-const NoticeDiv = styled.div`
-  margin-top:10px;
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  border-radius: 0.3rem;
-  text-align:center;
-  margin-bottom:auto;
-`;
 export default Notice;

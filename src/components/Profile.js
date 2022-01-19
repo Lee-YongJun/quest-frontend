@@ -1,6 +1,11 @@
-import React from "react";
 //스타일 컴포넌트
-import styled from "styled-components";
+import{
+    ProfileContainer,
+    Jumbotron,
+    ProfileDiv
+} from "../styles/styledProfile";
+//리액트
+import React from "react";
 //리덕스 useSelector: 리덕스의 state를 조회할 수 있다.
 import {useSelector} from "react-redux";
 //router redirect링크 처리
@@ -36,27 +41,4 @@ const Profile = () => {
         </ProfileContainer>
     );
 };
-//화면 styled component로 구성.
-const ProfileContainer = styled.div`
-    height:1000px;
-`;
-const Jumbotron = styled.header`
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
-  text-align:center;
-  margin-bottom:auto;
-`;
-const ProfileDiv = styled.div`
-  margin-top:10px;
-  padding: 10rem 3rem;
-  margin-bottom: 2rem;
-  background-color: #e9ecef;
-  border-radius: 0.3rem;
-  text-align:left;
-  margin-bottom:30px;
-  height:100%;
-  font-size:2rem;
-`;
 export default Profile;

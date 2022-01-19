@@ -1,6 +1,10 @@
+//라우터 링크사용
 import {Link} from "react-router-dom";
+//리액트 훅스사용
 import React, {useCallback, useEffect, useState} from "react";
+//리액트 리덕스
 import {useDispatch, useSelector} from "react-redux";
+//인증 로그아웃사용.
 import {logout} from "../actions/auth";
 
 const NavList = () => {
@@ -8,7 +12,7 @@ const NavList = () => {
     const [showAdminPage, setShowAdminPage] = useState(false);
 
     const {user: currentUser} = useSelector((state) => state.auth);
-    console.log(currentUser);
+
     //dispatch 사용하기 위한 준비
     const dispatch = useDispatch();
 

@@ -1,10 +1,16 @@
+//스타일 컴포넌트
+import {
+    LoginP,
+    LoginDiv,
+    FormGroup,
+    LoginButton,
+    ErrorMessage
+} from "../styles/styledLogin"
 //css연결
 import "../css/input.css";
 //alert창 변경
 import Swal from 'sweetalert2'
-import {login} from "../actions/auth";
-//스타일 컴포넌트
-import styled from "styled-components";
+import {login} from "../actions/auth";//스타일 컴포넌트
 //router redirect링크 처리
 import {Redirect} from 'react-router-dom';
 //reactHooks
@@ -93,6 +99,13 @@ const Login = (props) => {
                     setLoading(false);
                 });
         } else {
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: '로그인에 실패하셨습니다.',
+                showConfirmButton: true,
+                confirmButtonColor: '#F27474'
+            })
             setLoading(false);
         }
     };
@@ -149,43 +162,4 @@ const Login = (props) => {
         </LoginDiv>
     );
 };
-//화면 styled component로 구성.
-const LoginP = styled.div`
-  font-weight: 700;
-  font-size: 2em;
-  text-align:center;
-`;
-const LoginDiv = styled.div`
-  width:25%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /*요소의 높이/너비의 반(50%)만큼 위/왼쪽으로 이동*/
-  transform: translate(-50%, -50%)
-}
-`;
-const FormGroup = styled.div`
-  margin-top:1rem;
-  margin-bottom:1rem;
-`;
-const LoginButton = styled.button`
-  width: 100%;
-  height: 50px;
-  border: 0;
-  outline: none;
-  border-radius: 40px;
-  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
-  color: white;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-`;
-const ErrorMessage = styled.span`
-  font-size: 12px;
-  line-height: 42px;
-  font-weight: bold;
-  color: rgb(255,77,46);
-  vertical-align: middle;
-  float: right;
-  margin-right:10px;
- `;
 export default Login;

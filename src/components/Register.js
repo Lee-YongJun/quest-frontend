@@ -1,9 +1,22 @@
+//styled컴포넌트
+import {
+    AddressButton,
+    Ml10,
+    PostCodeInput,
+    Mr,
+    RegisterP,
+    RegisterDiv,
+    FormGroup,
+    AlertGroup,
+    FormPhoneGroup,
+    RegisterButton,
+    ErrorMessage,
+    RegisterInput
+} from "../styles/styledRegister"
 //css
 import "../css/input.css";
 //alert창
 import Swal from 'sweetalert2';
-//styled컴포넌트
-import styled from "styled-components";
 //등록 액션
 import {register} from "../actions/auth";
 //react-router-dom에서 redirect이동
@@ -140,6 +153,7 @@ const Register = () => {
                 });
         }
     };
+    //우편번호 검색
     const searchAddress = () => {
         new window.daum.Postcode({
             oncomplete: (data) => {
@@ -293,77 +307,4 @@ const Register = () => {
         </RegisterDiv>
     );
 };
-const AddressButton = styled.input`
-  width: 40%;
-  height: 50px;
-  border: 0;
-  outline: none;
-  border-radius: 40px;
-  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
-  color: white;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-`
-const Ml10 = styled.span`
-    margin-left:10%;
-`
-const PostCodeInput = styled.input`
-    width:50%;
-`
-const Mr = styled.span`
-    margin-right:1%;
-    margin-left:1%;
-`
-const RegisterInput = styled.input`
-    margin-left:1%;
-    width:29.7%;
-`
-//화면 styled component로 구성.
-const RegisterP = styled.div`
-  font-weight: 700;
-  font-size: 2em;
-  text-align:center;
-  margin-top:auto;
-  margin-bottom:auto;
-
-`;
-const RegisterDiv = styled.div`
-  height:100%;
-  width:25%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /*요소의 높이/너비의 반(50%)만큼 위/왼쪽으로 이동*/
-  transform: translate(-50%, -50%);
-  margin-top:100px;
-`;
-const FormGroup = styled.div`
-  margin-top:1rem;
-  margin-bottom:1rem;
-  text-align:right;
-`;
-const AlertGroup = styled.div`
-  margin-top:1rem;
-  margin-bottom:1rem;
-`;
-const FormPhoneGroup = styled.div`
-  margin-bottom:1rem;
-`;
-const RegisterButton = styled.button`
-  width: 100%;
-  height: 50px;
-  border: 0;
-  outline: none;
-  border-radius: 40px;
-  background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
-  color: white;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-`;
-const ErrorMessage = styled.span`
-  font-size: 12px;
-  font-weight: bold;
-  color: rgb(255,77,46);
-  margin-left:10px;
- `;
 export default Register;
